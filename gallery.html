@@ -15,6 +15,35 @@
       .pswp__caption__center {
         text-align: center;
       }
+
+      .pswp__top-bar-new {
+        display: flex;
+
+        font-size: 13px;
+        line-height: 44px;
+        color: #FFF;
+        opacity: 0.75;
+        padding: 0 10px;
+      }
+
+      .pswp__top-bar-new a {
+        color: #FFF;
+
+      }
+
+      .pswp__counter {
+        padding-left: 4em;
+      }
+
+      .pswp__top-bar-new .pswp__button {
+        float: unset;
+      }
+      .pswp__top-bar-new .pswp__counter {
+        position: relative;
+        left: unset;
+        top: unset;
+
+      }
     </style>
   </head>
 
@@ -37,8 +66,9 @@
 
         <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
         <div class="pswp__ui pswp__ui--hidden">
-          <div class="pswp__top-bar">
+          <div class="pswp__top-bar pswp__top-bar-new">
             <!--  Controls are self-explanatory. Order can be changed. -->
+            <div><a href="./">Home</a></div>
             <div class="pswp__counter"></div>
             <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
             <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
