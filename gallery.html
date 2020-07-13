@@ -19,6 +19,12 @@
   </head>
 
   <body>
+    <p>
+      <a href="./">Home</a>
+    </p>
+    <p>
+      <button onclick="openGallery();">Home</button>
+    </p>
     <div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
 
@@ -34,7 +40,6 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--share" title="Share"></button>
             <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
             <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
@@ -66,12 +71,30 @@
       </div>
     </div>
 
-    <script src="./photoswipe.min.js"></script>
-    <script src="./photoswipe-ui-default.min.js"></script>
+    <script src="./photoswipe.js"></script>
+    <script src="./photoswipe-ui-default.js"></script>
     <script>
       var galleryElement = document.querySelector('#gallery');
 
       var items = [
+        {
+          src: './photos/posed1.jpg',
+          w: 1600,
+          h: 1068,
+          title: ''
+        },
+        {
+          src: './photos/posed2.jpg',
+          w: 1600,
+          h: 1068,
+          title: ''
+        },
+        {
+          src: './photos/posed3.jpg',
+          w: 1600,
+          h: 1068,
+          title: ''
+        },
         {
           src: './photos/prep.jpg',
           w: 1600,
@@ -117,11 +140,19 @@
       ];
 
       var options = {
-        index: 0 // start at first slide
+        index: 0,
+        closeOnScroll: false,
+        pinchToClose: false,
+        closeOnVerticalDrag: false,
+        escKey: false,
       };
 
-      var gallery = new PhotoSwipe(galleryElement, PhotoSwipeUI_Default, items, options);
-      gallery.init();
+      function openGallery() {
+        var gallery = new PhotoSwipe(galleryElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+      }
+
+      openGallery();
     </script>
   </body>
 </html>
